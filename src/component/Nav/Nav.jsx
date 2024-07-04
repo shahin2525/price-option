@@ -33,8 +33,8 @@ const Nav = () => {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <nav>
-      <div onClick={() => setOpen(!open)}>
+    <nav className="bg-yellow-300 p-4">
+      <div className="md:hidden" onClick={() => setOpen(!open)}>
         {open ? (
           <IoMdMenu className="text-2xl"></IoMdMenu>
         ) : (
@@ -43,8 +43,8 @@ const Nav = () => {
       </div>
       <ul
         className={`md:flex gap-5 ${
-          open ? "top-4" : "top-[-260px]"
-        } bg-yellow-300 p-4 absolute w-full`}
+          open ? "top-10" : "top-[-260px]"
+        } bg-yellow-300 p-4  w-full  absolute md:static`}
       >
         {routes.map((route) => (
           <NavOptions route={route} key={route.id}></NavOptions>
