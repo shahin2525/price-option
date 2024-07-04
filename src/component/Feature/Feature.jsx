@@ -1,5 +1,5 @@
 import { BiCheck } from "react-icons/bi";
-
+import PropTypes from "prop-types";
 const Feature = ({ feature }) => {
   return (
     <div className="flex">
@@ -8,5 +8,7 @@ const Feature = ({ feature }) => {
     </div>
   );
 };
-
+Feature.propTypes = {
+  feature: PropTypes.string,
+};
 export default Feature;
