@@ -10,23 +10,36 @@ const Options = () => {
     },
     {
       name: "Jem2",
-      features: ["Compact", "Long battery life", "WiFi"],
+      features: [
+        "Compact",
+        "Long battery life",
+        "Voice control",
+        "Voice control",
+        "WiFi",
+      ],
       price: 249.99,
       id: 102,
     },
     {
       name: "Jem3",
-      features: ["Durable", "High resolution display", "Voice control"],
+      features: [
+        "Durable",
+        "High resolution display",
+        "Voice control",
+        "Voice control",
+        "Voice control",
+        "WiFi",
+      ],
       price: 299.99,
       id: 103,
     },
   ];
 
   return (
-    <div>
+    <div className="p-6 bg-black">
       <h1>Best price in town</h1>
 
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {options.map((option) => (
           <Option key={option.id} option={option}></Option>
         ))}
