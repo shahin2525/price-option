@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { IoMdMenu } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 import NavOptions from "../NavOptions/NavOptions";
 
 const Nav = () => {
@@ -28,15 +31,26 @@ const Nav = () => {
       path: "/blog",
     },
   ];
-
+  const [open, setOpen] = useState(false);
   return (
-    <div>
-      <ul>
+    <nav>
+      <div onClick={() => setOpen(!open)}>
+        {open ? (
+          <IoMdMenu className="text-2xl"></IoMdMenu>
+        ) : (
+          <RxCross2 className="text-2xl"></RxCross2>
+        )}
+      </div>
+      <ul
+        className={`md:flex gap-5 ${
+          open ? "top-4" : "top-[-260px]"
+        } bg-yellow-300 p-4 absolute w-full`}
+      >
         {routes.map((route) => (
           <NavOptions route={route} key={route.id}></NavOptions>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 };
 
